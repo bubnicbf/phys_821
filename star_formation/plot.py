@@ -309,3 +309,13 @@ of all the sampled stars and restricted to the selected stars
     ax.set_title('mass distribution simulated\nwith AV=%s, age=%s years, apertursize=%s AU' % (av,age,apera))
 
     plt.savefig('plot/hist-%s-%s-%s.png' % (av,apera,age))
+
+
+
+
+
+
+
+
+
+
