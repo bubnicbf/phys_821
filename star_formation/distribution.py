@@ -48,8 +48,8 @@ class Distribution( object ):
         self._pdf = func
         self._lowerbound = a
         self._upperbound = b
-	self.cdf_init(self._lowerbound, self._upperbound)
-	self._norm = self.cdf()(self._upperbound)
+    self.cdf_init(self._lowerbound, self._upperbound)
+    self._norm = self.cdf()(self._upperbound)
         t, step = np.linspace(self._lowerbound, self._upperbound, 10000, endpoint=True, retstep=True)
         y = [step*( self.cdf()(t[i]) + self.cdf()(t[i+1]) )/2. for i in (range(t.size - 1))]
         self._mean = self._upperbound - sum(y)/self._norm
@@ -77,9 +77,12 @@ class Distribution( object ):
     def sample(self, n):
         t = np.random.uniform(0,self.norm(),n)
         return self.ppf()(t)
+    
+    def sample(self):
+        t = np.random.uniform(0,self.norm())
+        return self.ppf()(t)
 
     def mean(self):                     
         return self._mean
-
 
 
