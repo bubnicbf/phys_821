@@ -340,4 +340,3 @@ def histogram(folder, av, apera, age):
 
 
 
-
